@@ -1,0 +1,9 @@
+my ($stdout, $stderr) = capture {
+ 							system ( "rm $playing_file" );
+							};
+        		print "playing file is: ".$playing_file;
+			if($stdout) {
+		        		$label->configure(-text => "file deleted with zero error");
+			} else  {
+		        		$label->configure(-text => "Error: $stderr");
+	 		} #else
